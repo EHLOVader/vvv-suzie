@@ -1,5 +1,6 @@
 {
   "name": "ehlovader/vvv-suzie",
+  "type": "project",
   "repositories": [
     {
       "type": "composer",
@@ -33,6 +34,10 @@
   "scripts": {
     "post-install-cmd": [
       "env php suzie/bootstrap/cdn.php"
+    ],
+    "post-create-project-cmd": [
+      "skel/post_create_project.php",
+      "php artisan key:generate"
     ],
     "post-update-cmd": [
       "env php suzie/bootstrap/cdn.php"
