@@ -9,7 +9,9 @@ echo "projectname $projectname taken from directory name\n";
 // for the example we only do {{ projectname }}
 $replaces = [
     "{{ projectname }}" => $projectname,
-    "{{ projectid }}" => $projectname . 'dev'
+    "{{ projectid }}" => $projectname . 'dev',
+    "{{ dbuser }}" => $projectname . '_dev',
+    "{{ dbpass }}" => $projectname,
 ];
 
 

@@ -14,7 +14,7 @@ fi
 # Make a database, if we don't already have one
 echo "Checking $site_name database."
 mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS {{ projectid }}"
-mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON {{ projectid }}.* TO root@localhost IDENTIFIED BY 'root';"
+mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON {{ dbuser }}.* TO root@localhost IDENTIFIED BY {{ dbpass }};"
 
 # Logging where we can get to it.
 if [[ ! -d /srv/log/{{ projectname }}.dev ]]; then
